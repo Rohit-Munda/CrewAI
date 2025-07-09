@@ -1,0 +1,60 @@
+job_opening_task:
+  description: >
+    Extract job postings by region, roles, job titles, and experience from these job sites {job_portals}
+
+    Look for jobs that match these criteria:
+    - Job Title: Should be related to {job_title}
+    - Location: {location} (include remote jobs if available)
+    - Experience: Around {experience_years} years
+    - Skills: Should match at least some of these skills: {skills}
+    - Job Type: Full-time, Part-time, Contract, Temporary, Internship
+    
+    For each job posting, extract:
+    - region: The broader region or area where the job is located (e.g., "Northeast", "West Coast", "Midwest")
+    - role: The specific role or function (e.g., "Frontend Developer", "Data Analyst")
+    - job_title: The exact title of the job
+    - experience: The experience requirement in years or level (e.g., "3-5 years", "Senior")
+    - job_link: The link to the job posting
+  expected_output: >
+    A list with at least 3 different job opportunities and the job details. MAXIMUM 10.
+  agent: researcher
+
+
+job_analysis_task:
+  description: >
+    As a career expert, analyze the job opportunities:
+
+    ONLY analyze jobs that match the user's requirements:
+    - Job Title: Related to {job_title}
+    - Location/Region: Near {location}
+    - Experience: Around {experience_years} y ears
+    - Skills: {skills}
+    - Job Type: Full-time, Part-time, Contract, Temporary, Internship
+  expected_output: >
+    Provide your analysis in this format:
+    
+    💼 SELECTED JOB OPPORTUNITIES
+    • List only 5-6 best matching jobs
+    • For each job include:
+      - Job Title and Role
+      - Region/Location
+      - Experience Required
+      - Pros and Cons
+      - Job Link
+    🔍 SKILLS MATCH ANALYSIS
+    • Compare the selected jobs based on:
+      - Skills match with user's profile
+      - Experience requirements
+      - Growth potential
+
+    💡 RECOMMENDATIONS
+    • Top 3 jobs from the selection with reasoning
+    • Career growth potential
+    • Points to consider before applying
+
+    📝 APPLICATION TIPS
+    • Job-specific application strategies
+    • Resume customization tips for these roles
+
+    Format your response in a clear, structured way using the above sections.
+  agent: career_expert
