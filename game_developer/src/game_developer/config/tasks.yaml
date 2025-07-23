@@ -1,0 +1,42 @@
+code_task:
+  description: >
+    Develop a Python-based game according to the provided instructions. The code should be clear, modular,
+    and adhere to PEP8 guidelines. Include necessary comments and docstrings to explain logic and structure.
+
+    Instructions
+    ------------
+    {game}
+  expected_output: >
+    Provide the complete, runnable Python source code in a single code block.
+    Do not include explanations or text outside the code.
+
+
+review_task:
+  description: >
+    You will create a game using python, these are the instructions:
+
+    Instructions
+    ------------
+    {game}
+
+    Analyze the provided Python game code for syntax, logic, and security errors.
+    Verify correctness, check for missing imports, variable declarations, unmatched brackets,
+    and overall code quality. Ensure compliance with project requirements and coding standards
+  expected_output: >
+    Return the corrected and improved Python code only, incorporating fixes for any errors found.
+    Do not include commentary or explanations outside the code.
+
+evaluate_task:
+  description: >
+    You are helping create a game using python, these are the instructions:
+
+    Instructions
+    ------------
+    {game}
+
+    Assess the provided Python game code to ensure it fully meets all specified instructions and functional
+    requirements. Confirm that the gameplay logic is implemented as described and that the code is ready for
+    production.
+  expected_output: >
+    Deliver the final, validated Python game code. Do not include additional explanations or content;
+    provide the code only.
